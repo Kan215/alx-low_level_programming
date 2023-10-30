@@ -1,11 +1,12 @@
-#include  <stdio.h>
-#include <unixstd.h>
+#include <stdio.h>
 /**
- * main - A c program that prints a line to the std error
- * Return 1 (success)
+ * main - start execution
+ * Description: program display a statement with a standart error
+ * Return: 1 (Error)
  */
 int main(void)
 {
-	fput("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", stdout);
+char *standard = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+fputs(standard, stdout);
 return (1);
 }
