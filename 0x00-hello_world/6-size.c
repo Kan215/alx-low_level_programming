@@ -1,20 +1,21 @@
+#include <stdio.h>
 
-# include <stdio.h>
-/**
- * main - A program to print the size of various computer types
- * Return o (success)
- */
-int main(void)
-{       
-        char a;
-        int b;
-        long int c;
-        long long int d;
-        float f;
-printf("size of a char: %zu byte(s)\n",(unsigned long)sizeof(a));
-printf("size of a int: %zu byte(s)\n",(unsigned long)sizeof(b));
-printf("size of a long int: %zu byte(s)\n",(unsigned long)sizeof(c));
-printf("size of a long long: %zu byte(s)\n",(unsigned long)sizeof(d));
-printf("size of a float: %zu byte(s)\n",(unsigned long)sizeof(f));
-return (0);
+int main() {
+    printf("Size of char: %zu byte(s)\n", sizeof(char));
+    printf("Size of short: %zu byte(s)\n", sizeof(short));
+    printf("Size of int: %zu byte(s)\n", sizeof(int));
+    printf("Size of long: %zu byte(s)\n", sizeof(long));
+    printf("Size of long long: %zu byte(s)\n", sizeof(long long));
+    printf("Size of float: %zu byte(s)\n", sizeof(float));
+    printf("Size of double: %zu byte(s)\n", sizeof(double));
+    printf("Size of long double: %zu byte(s)\n", sizeof(long double));
+
+    return 0;
 }
+
+
+
+
+
+
+
