@@ -1,16 +1,18 @@
-#include "main.h"
-/**
-* main - Start execution
-* Description: prints the alphabet, in lowercase
-* Return: 0(Success)
-*/
+#include <unistd.h>
+
+int _putchar(char c);
+
 void print_alphabet(void)
 {
-char  alphabet;
-for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
-{
-_putchar(alphabet);
+    char letter = 'a';
+    
+    while (letter <= 'z')
+    {
+        _putchar(letter);
+        letter++;
+    }
+    
+    _putchar('\n');
 }
-_putchar('\n');
-return (0);
-}
+
+
