@@ -1,8 +1,9 @@
 #include "main.h"
-/** _islower - checks for lowercase
-* c : the character to be checked
-* Retuen: 1 for lowercase or 0 for upper
+/** islower - checks for lowercase
+ @c: is the assigned integer
+* Return: 1 for lowercase
 */
+
 int _islower(int c)
 {
 if (c >= 97 && c <= 122)
