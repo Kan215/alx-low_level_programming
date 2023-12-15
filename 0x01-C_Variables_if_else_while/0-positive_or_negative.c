@@ -1,20 +1,25 @@
-@@ -13,15 +13,15 @@ int main(void)
-	n = rand() - RAND_MAX / 2;
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+/**
+ * main - This is the starting point or  the entry point of the code
+ * Reurn : Always 0 (on success)
+ */
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() -  RAND_MAX / 2;
 	if (n > 0)
-	{
-		printf("%d is positive", n);
 		printf("%d is positive\n", n);
-	}
-	else if	(n == 0)
-	{
-		print("%d is zero", n);
+	else if (n == 0)
 		printf("%d is zero\n", n);
-	}
-	else
-	{
-		printf("is negative");
+	else 
 		printf("%d is negative\n", n);
-	}
-	/* return value is */
 	return (0);
+}
+
+
 
