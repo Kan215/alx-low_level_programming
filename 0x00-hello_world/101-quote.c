@@ -1,4 +1,4 @@
-#include <stdio.h>
+include <stdio.h>
 /**
  * main - start execution
  * Description: program display a statement with a standart error
