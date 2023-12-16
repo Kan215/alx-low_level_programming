@@ -8,25 +8,14 @@
  */
 int main(void)
 {
-	char c;
+	char x;
 
-	char d;
+	for (x = 'a'; x <= 'z'; x++)
+		putchar(x);
 
-	c = 'a';
-	d = 'A';
-	while
-		(c <= 'z') {
-			putchar(c);
-			c++;
-		}
-	while
-		(d <= 'z') {
-			putchar (d);
+	for (x = 'A'; x <= 'Z'; x++)
+		putchar(x);
+	putchar('\n');
 
-		}
-	putchar ('\n');
 	return (0);
-
 }
-
-
