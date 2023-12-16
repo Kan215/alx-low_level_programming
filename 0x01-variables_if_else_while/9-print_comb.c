@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Entry point of the program
+ * main - Entry point of the prograim
  * and then in uppercase
  * followed by a new line.
  * Return: Always 0 (Success)
@@ -9,14 +9,15 @@ int main(void)
 {
 	int a;
 
-	for (a = 0; a < 10; a++)
+	for (a = '0'; a <= '9'; a++)
 	{
-		putchar(a + '0');
-		if (a < 9)
-		{
-			putchar(',');
-		        putchar(' ');
-		}
+		putchar(a);
+
+	if (a != '9')
+	{
+		putchar(',');
+		putchar(' ');
+	}
 	}
 	putchar('\n');
 	return (0);
