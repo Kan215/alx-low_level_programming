@@ -9,24 +9,17 @@
  */
 int main(void)
 {
+	int a;
 
 	char c;
 
-	int a;
+	for (a = '0'; a <= '9'; a++)
+		putchar(a);
 
-	c = 'a';
-	a = 0;
-	while
-		(a < 10) {
-			putchar(a + '0');
-			a++;
+	for (c = 'a'; c <= 'f'; c++)
+		putchar(c);
 
-		}
-	while
-		(c <= 'z') {
-			putchar(c);
-			c++;
-		}
 	putchar('\n');
+
 	return (0);
 }
