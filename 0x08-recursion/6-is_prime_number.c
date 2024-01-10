@@ -16,7 +16,7 @@ int is_prime_number(int n)
 /**
  * check_prime - check if the number is prime
  * @n: the number to be checked
- * @i- the number of iterations
+ * @i: the number of iterations
  *
  * Return: 1 for prime and 0 composite
  */
