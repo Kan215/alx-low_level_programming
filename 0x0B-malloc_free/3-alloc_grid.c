@@ -2,16 +2,16 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - Allocates a 2D array (grid) of integers.
- * @width: Width input for the grid.
- * @height: Height input for the grid.
+ * alloc_grid - Allocates a grid of integers.
+ * @width: Width input .
+ * @height: Height input .
  *
- * Return: Pointer to the allocated 2D array (grid).
+ * Return: Pointer to the allocated  array grid
  */
 int **alloc_grid(int width, int height)
 {
 	int **mee;
-	int x, y;
+	int a, b;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -21,24 +21,24 @@ int **alloc_grid(int width, int height)
 	if (mee == NULL)
 		return (NULL);
 
-	for (x = 0; x < height; x++)
+	for (a = 0; a < height; a++)
 	{
-		mee[x] = malloc(sizeof(int) * width);
+		mee[a] = malloc(sizeof(int) * width);
 
-		if (mee[x] == NULL)
+		if (mee[a] == NULL)
 		{
-			for (; x >= 0; x--)
-				free(mee[x]);
+			for (; a >= 0; a--)
+				free(mee[a]);
 
 			free(mee);
 			return (NULL);
 		}
 	}
 
-	for (x = 0; x < height; x++)
+	for (a = 0; a < height; a++)
 	{
-		for (y = 0; y < width; y++)
-			mee[x][y] = 0;
+		for (b = 0; b < width; b++)
+			mee[a][b] = 0;
 	}
 
 	return (mee);
