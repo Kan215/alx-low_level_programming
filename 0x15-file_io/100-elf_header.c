@@ -27,11 +27,14 @@ typedef struct {
 
 void print_elf_header(const Elf64_Ehdr *header) {
     int i;
-    printf("Magic:   ");
+
+    printf("ELF Header:\n");
+    printf("  Magic:   ");
     for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", header->e_ident[i]);
     }
-    printf("\nClass:                              ");
+    printf("\n");
+    printf("  Class:                             ");
     switch (header->e_ident[4]) {
         case 1:
             printf("ELF32\n");
@@ -42,7 +45,7 @@ void print_elf_header(const Elf64_Ehdr *header) {
         default:
             printf("<unknown>\n");
     }
-    printf("Data:                               ");
+    printf("  Data:                              ");
     switch (header->e_ident[5]) {
         case 1:
             printf("2's complement, little endian\n");
@@ -53,11 +56,37 @@ void print_elf_header(const Elf64_Ehdr *header) {
         default:
             printf("<unknown>\n");
     }
-    printf("Version:                            %u (current)\n", header->e_ident[6]);
-    printf("OS/ABI:                             %u\n", header->e_ident[7]);
-    printf("ABI Version:                        %u\n", header->e_ident[8]);
-    printf("Type:                               %u\n", header->e_type);
-    printf("Entry point address:                %#lx\n", header->e_entry);
+    printf("  Version:                           %u (current)\n", header->e_ident[6]);
+    printf("  OS/ABI:                            ");
+    switch (header->e_ident[7]) {
+        case 0:
+            printf("UNIX - System V\n");
+            break;
+        case 2:
+            printf("UNIX - NetBSD\n");
+            break;
+        case 6:
+            printf("UNIX - Solaris\n");
+            break;
+        default:
+            printf("<unknown: %d>\n", header->e_ident[7]);
+    }
+    printf("  ABI Version:                       %u\n", header->e_ident[8]);
+    printf("  Type:                              ");
+    switch (header->e_type) {
+        case 1:
+            printf("REL (Relocatable file)\n");
+            break;
+        case 2:
+            printf("EXEC (Executable file)\n");
+            break;
+        case 3:
+            printf("DYN (Shared object file)\n");
+            break;
+        default:
+            printf("<unknown>\n");
+    }
+    printf("  Entry point address:               %#lx\n", header->e_entry);
 }
 
 int main(int argc, char *argv[]) {
