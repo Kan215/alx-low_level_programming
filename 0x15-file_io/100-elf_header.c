@@ -26,8 +26,7 @@ typedef struct {
 } Elf64_Ehdr;
 
 void print_elf_header(const Elf64_Ehdr *header) {
-    int i;
-
+    unsigned char i;
     printf("ELF Header:\n");
     printf("  Magic:   ");
     for (i = 0; i < EI_NIDENT; i++) {
@@ -87,6 +86,15 @@ void print_elf_header(const Elf64_Ehdr *header) {
             printf("<unknown>\n");
     }
     printf("  Entry point address:               %#lx\n", header->e_entry);
+    printf("  Start of program headers:          %lu (bytes into file)\n", (unsigned long)header->e_phoff);
+    printf("  Start of section headers:          %lu (bytes into file)\n", (unsigned long)header->e_shoff);
+    printf("  Flags:                             %#x\n", header->e_flags);
+    printf("  Size of this header:               %u (bytes)\n", header->e_ehsize);
+    printf("  Size of program headers:           %u (bytes)\n", header->e_phentsize);
+    printf("  Number of program headers:         %u\n", header->e_phnum);
+    printf("  Size of section headers:           %u (bytes)\n", header->e_shentsize);
+    printf("  Number of section headers:         %u\n", header->e_shnum);
+    printf("  Section header string table index: %u\n", header->e_shstrndx);
 }
 
 int main(int argc, char *argv[]) {
